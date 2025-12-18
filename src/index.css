@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@layer theme {
+  :root {
+    /* Medical Theme - Light Mode */
+    --color-background: 210 20% 98%;
+    --color-foreground: 215 25% 15%;
+
+    --color-card: 0 0% 100%;
+    --color-card-foreground: 215 25% 15%;
+
+    --color-popover: 0 0% 100%;
+    --color-popover-foreground: 215 25% 15%;
+
+    /* Primary: Medical Blue/Teal */
+    --color-primary: 195 85% 45%;
+    --color-primary-foreground: 0 0% 100%;
+
+    /* Secondary: Light Medical Blue */
+    --color-secondary: 195 30% 95%;
+    --color-secondary-foreground: 195 85% 25%;
+
+    /* Muted: Soft Gray */
+    --color-muted: 210 20% 96%;
+    --color-muted-foreground: 215 15% 45%;
+
+    /* Accent: Teal Accent */
+    --color-accent: 175 60% 50%;
+    --color-accent-foreground: 0 0% 100%;
+
+    /* Destructive: Medical Red */
+    --color-destructive: 0 75% 55%;
+    --color-destructive-foreground: 0 0% 100%;
+
+    /* Border and Input */
+    --color-border: 215 20% 88%;
+    --color-input: 215 20% 88%;
+    --color-ring: 195 85% 45%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Medical Theme - Dark Mode */
+    --color-background: 215 30% 8%;
+    --color-foreground: 210 20% 95%;
+
+    --color-card: 215 25% 12%;
+    --color-card-foreground: 210 20% 95%;
+
+    --color-popover: 215 25% 12%;
+    --color-popover-foreground: 210 20% 95%;
+
+    /* Primary: Brighter Medical Blue for dark mode */
+    --color-primary: 195 75% 55%;
+    --color-primary-foreground: 215 30% 8%;
+
+    /* Secondary: Dark Medical Blue */
+    --color-secondary: 195 25% 18%;
+    --color-secondary-foreground: 195 60% 85%;
+
+    /* Muted: Dark Gray */
+    --color-muted: 215 20% 18%;
+    --color-muted-foreground: 215 15% 65%;
+
+    /* Accent: Teal Accent */
+    --color-accent: 175 50% 45%;
+    --color-accent-foreground: 0 0% 100%;
+
+    /* Destructive: Softer Red for dark */
+    --color-destructive: 0 65% 50%;
+    --color-destructive-foreground: 0 0% 100%;
+
+    --color-border: 215 20% 22%;
+    --color-input: 215 20% 22%;
+    --color-ring: 195 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--color-border));
+  }
+
+  body {
+    background-color: hsl(var(--color-background));
+    color: hsl(var(--color-foreground));
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}

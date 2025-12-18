@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  # Frontend application
+  web:
+    build: .
+    container_name: hospital-qr-system
+    ports:
+      - "80:80"
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    networks:
+      - hospital-network
+
+  # Optional: Add backend API service here
+  # api:
+  #   image: your-backend-image
+  #   container_name: hospital-api
+  #   ports:
+  #     - "3000:3000"
+  #   environment:
+  #     - DATABASE_URL=postgresql://user:password@db:5432/hospital
+  #   networks:
+  #     - hospital-network
+  #   depends_on:
+  #     - db
+
+  # Optional: Database service
+  # db:
+  #   image: postgres:15-alpine
+  #   container_name: hospital-db
+  #   environment:
+  #     - POSTGRES_USER=hospital
+  #     - POSTGRES_PASSWORD=secure_password
+  #     - POSTGRES_DB=hospital_qr
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+  #   networks:
+  #     - hospital-network
+
+networks:
+  hospital-network:
+    driver: bridge
+
+# volumes:
+#   postgres_data:
