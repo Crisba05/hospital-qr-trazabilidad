@@ -37,7 +37,7 @@ const CertificationFormModal: React.FC<CertificationFormModalProps> = ({
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        console.log('Certification data:', formData);
+        console.log('Certification data:', formData, 'File:', certificateFile);
 
         if (onSuccess) {
             onSuccess();

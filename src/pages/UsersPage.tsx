@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
-import { Plus, Search, UserPlus, Shield, Edit, Trash2, UserX, UserCheck, Filter } from 'lucide-react';
+import { Search, Filter, Edit, Trash2, UserCheck, UserX, UserPlus, Shield } from 'lucide-react';
 import UserFormModal from '@/components/shared/UserFormModal';
 import UserEditModal from '@/components/shared/UserEditModal';
 import ConfirmDialog from '@/components/shared/ConfirmDialog';
@@ -218,7 +218,6 @@ const UsersPage: React.FC = () => {
                 open={showFilterDialog}
                 onOpenChange={setShowFilterDialog}
                 filters={{
-                    role: ['admin', 'tecnico', 'supervisor', 'asistencial', 'auditor'],
                     status: ['activo', 'inactivo'],
                 }}
                 onApplyFilters={handleApplyFilters}
