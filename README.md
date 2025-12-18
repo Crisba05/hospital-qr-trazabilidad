@@ -283,15 +283,12 @@ npm run build -- --force
 ## 📞 Soporte
 
 Para reportar problemas o solicitar funcionalidades:
-- Email: soporte@essalud.gob.pe
-- Teléfono: (01) XXX-XXXX
+- Email: cvilca.sam@gmail.com
+- Teléfono: 937050119
 
-## 📄 Licencia
-
-© 2025 EsSalud - Hospital III de Emergencias Grau. Todos los derechos reservados.
 
 ---
 
-**Desarrollado para**: Hospital III de Emergencias Grau - EsSalud  
+**Desarrollado por**: Cristian Samuel Bacilio vilca
 **Versión**: 1.0.0  
 **Última actualización**: Diciembre 2024
