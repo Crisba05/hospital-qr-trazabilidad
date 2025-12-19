@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import { useAuth } from '@/contexts/AuthContext';
+import { useSidebar } from '@/contexts/SidebarContext';
 import { useNavigate } from 'react-router-dom';
-import { Bell, Search, User, LogOut, Settings, AlertCircle, CheckCircle, Clock } from 'lucide-react';
+import { Bell, Search, User, LogOut, Settings, AlertCircle, CheckCircle, Clock, Menu } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 
 const TopNavbar: React.FC = () => {
     const { user, logout } = useAuth();
+    const { toggleSidebar } = useSidebar();
     const navigate = useNavigate();
     const [showUserMenu, setShowUserMenu] = useState(false);
     const [showNotifications, setShowNotifications] = useState(false);
@@ -85,19 +88,31 @@ const TopNavbar: React.FC = () => {
 
     return (
         <header style={{ backgroundColor: 'hsl(195, 85%, 45%)' }} className="h-16 border-b border-white/10 flex items-center justify-between px-6">
-            {/* Search Bar */}
-            <div className="flex-1 max-w-md">
-                <form onSubmit={handleSearch} className="relative">
-                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/60" />
-                    <Input
-                        type="search"
-                        placeholder="Buscar equipos..."
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                        style={{ backgroundColor: 'rgba(255, 255, 255, 0.1)', borderColor: 'rgba(255, 255, 255, 0.2)', color: 'white' }}
-                        className="pl-10 placeholder:text-white/50"
-                    />
-                </form>
+            <div className="flex items-center gap-4 flex-1">
+                {/* Hamburger Menu - Mobile & Desktop */}
+                <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={toggleSidebar}
+                    className="lg:hidden text-white hover:bg-white/10"
+                >
+                    <Menu className="w-5 h-5" />
+                </Button>
+
+                {/* Search Bar */}
+                <div className="flex-1 max-w-md">
+                    <form onSubmit={handleSearch} className="relative">
+                        <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/60" />
+                        <Input
+                            type="search"
+                            placeholder="Buscar equipos..."
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                            style={{ backgroundColor: 'rgba(255, 255, 255, 0.1)', borderColor: 'rgba(255, 255, 255, 0.2)', color: 'white' }}
+                            className="pl-10 placeholder:text-white/50"
+                        />
+                    </form>
+                </div>
             </div>
 
             {/* Right Section */}
